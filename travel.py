@@ -4,13 +4,13 @@ from places import places
 app = Flask(__name__)
 
 
-@app.route('/explore', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('explore.html', places=places)
+    return render_template('explore.html')
 
-@app.route('/', methods=['GET'])
+@app.route('/echo', methods=['GET'])
 def func():
-    return render_template('echo.html')
+    return render_template('echo.html', places=places)
 
 @app.route('/result', methods=['POST'])
 def result():
