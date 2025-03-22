@@ -1,4 +1,4 @@
-
+##------Data -------##
 places = [
     {
         'name': 'Paris',

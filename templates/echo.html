@@ -93,6 +93,7 @@
     <div class="logo-container">
         <img class="logo" src="https://media.istockphoto.com/id/1192489303/vector/compass-rose-vector-logo-template-illustration-design-vector-eps-10.jpg?s=612x612&w=0&k=20&c=90gnw64Ur4vn9JeZ6vjO-hispqNvIU1vKS76jVzscto=" alt="Your Logo">
     </div> 
+    <!-- Home button at the top-right corner -->
     <div style="position: absolute; top: 20px; right: 20px;">
         <button onclick="window.location.href = '/';" style="padding: 15px 30px; background-color: #0646ad; color:white; border: none; border-radius: 8px; cursor: pointer; margin-right: 10px; font-size: 16px; font-family: 'Lucida Handwriting', sans-serif;">Home</button>
     </div>
@@ -101,17 +102,18 @@
     <h1>ExploreEcho</h1>
     <h2>Discover, Explore, Embrace: Your Journey Begins Here.</h2>
    
-   
+    <!-- Form submission is handled by Flask (result route)-->
     <form action="{{url_for('result')}}" method="post" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <!-- Form inputs -->
         <!-- Choose a destination -->
+        <!-- Dropdown to select a travel destination -->
         <label for="place" style="font-size: 22px; margin-bottom: 10px; color:#0442a6">Choose a destination:</label>
         <select name="place" id="places" style="padding: 8px 12px; border-radius: 15px; border: 1px solid #ccc; font-family: Lucida Handwriting; font-size: 16px; width: 200px; margin-bottom: 20px;">
             <option value=""></option>
-            {% for place in places %}
+            {% for place in places %}  <!--jinja for Dropdown Dynamic-->
                 <option value="{{ place['name'] }}">{{ place['name'] }}</option>
             {% endfor %}
-            <!-- Add more destination options as needed -->
+            
         </select>
         
         <!-- Choose a budget -->
